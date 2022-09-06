@@ -50,7 +50,7 @@ if strcmp(ACS,'Fleet')
         ksp_ref_temp2(:,:,:,i,:) = ksp_ref_temp(:,:,:,[i,i+size(ksp_ref_temp,4)/MB]);
     end
     ksp_ref = fftc(ksp_ref_temp2,5);
-    myshow3(squeeze(sos(ifftc(ifft2c(ksp_ref),5),3))); %imcontrast
+%     myshow3(squeeze(sos(ifftc(ifft2c(ksp_ref),5),3))); %imcontrast
     clear refs; clear ksp_ref_temp2; clear ksp_ref_temp
     save([savepath, 'ksp_ref_Fleet'],'ksp_ref');
 
@@ -71,7 +71,7 @@ else
     end
     ksp_ref = fftc(ksp_ref_temp2,5);
     clear refs; clear ksp_ref_temp2; clear ksp_ref_temp
-    myshow3(squeeze(sos(ifftc(ifft2c(ksp_ref),5),3)));
+%     myshow3(squeeze(sos(ifftc(ifft2c(ksp_ref),5),3)));
     save([savepath, 'ksp_ref_Gre'],'ksp_ref');
     %ksp_ref = 200 66 32 70 2
 end
